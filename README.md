@@ -1,12 +1,9 @@
 # **DarkSilk (DRKSLK) Release Candidate**
-
-(Alpha Level)
-
-[![Code Climate](https://codeclimate.com/github/SCDeveloper/DarkSilk-Release-Candidate/badges/gpa.svg)](https://codeclimate.com/github/SCDeveloper/DarkSilk-Release-Candidate) [![Test Coverage](https://codeclimate.com/github/SCDeveloper/DarkSilk-Release-Candidate/badges/coverage.svg)](https://codeclimate.com/github/SCDeveloper/DarkSilk-Release-Candidate/coverage) [![Issue Count](https://codeclimate.com/github//SCDeveloper/DarkSilk-Release-Candidate/badges/issue_count.svg)](https://codeclimate.com/github/SCDeveloper/DarkSilk-Release-Candidate)
+Waffle Status: [![Stories in Ready](https://badge.waffle.io/SCDeveloper/DarkSilk-Release-Candidate.png?label=ready&title=Ready)](http://waffle.io/SCDeveloper/DarkSilk-Release-Candidate)
 
 DarkSilk Integration/Staging Tree
 ================================
-![DRKSLK logo](https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/12662013_621650008001168_4546399705491232237_n.png?oh=38604d9a10c0823ac6d7d51b9c2878c9&oe=573958C0)
+![](src/qt/res/icons/darksilk-80.png)
 
 **Copyright (c) 2015-2016 Silk Network**
 
