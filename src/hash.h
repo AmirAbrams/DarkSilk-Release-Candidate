@@ -147,7 +147,7 @@ inline int Argon2d_Hash(void *out, size_t outlen, const void *in, size_t inlen, 
     context.free_cbk = NULL;
     context.flags = ARGON2_DEFAULT_FLAGS;
 
-    return argon2_core(&context, Argon2_d);
+    return argon2_ctx(&context, Argon2_d);
 }
 
 inline uint256 hashArgon2d(const void* input)
