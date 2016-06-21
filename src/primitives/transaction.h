@@ -7,14 +7,7 @@
 #define DARKSILK_PRIMITIVES_TRANSACTION_H
 
 #include <stdio.h>
-/*
-#include "amount.h"
-#include "uint256.h"
-#include "serialize.h"
-#include "utilmoneystr.h"
-#include "script/script.h"
-#include "timedata.h"
-*/
+
 #include "amount.h"
 #include "script/script.h"
 #include "serialize.h"
@@ -30,6 +23,30 @@ class CValidationInterface;
 class CValidationState;
 
 using namespace std;
+
+static const int NAMECOIN_TX_VERSION = 0x0735; //0x0735 is initial version in Darksilk
+typedef std::vector<unsigned char> CNameVal;
+
+struct NameTxInfo
+{
+    CNameVal name;
+    CNameVal value;
+    int nRentalDays;
+    int op;
+    int nOut;
+    std::string err_msg; //in case function that takes this as argument have something to say about it
+
+    //used only by DecodeNameScript()
+    std::string strAddress;
+    bool fIsMine;
+
+    //used only by GetNameList()
+    int nExpiresAt;
+
+    NameTxInfo(): nRentalDays(-1), op(-1), nOut(-1), fIsMine(false), nExpiresAt(-1) {}
+    NameTxInfo(CNameVal name, CNameVal value, int nRentalDays, int op, int nOut, std::string err_msg):
+        name(name), value(value), nRentalDays(nRentalDays), op(op), nOut(nOut), err_msg(err_msg), fIsMine(false), nExpiresAt(-1) {}
+};
 
 /// An outpoint - a combination of a transaction hash and an index n into its vout
 class COutPoint
@@ -81,19 +98,6 @@ public:
         return SerializeHash(*this);
     }
 
-};
-
-///  An inpoint - a combination of a transaction and an index n into its vin
-class CInPoint
-{
-public:
-    CTransaction* ptx;
-    unsigned int n;
-
-    CInPoint() { SetNull(); }
-    CInPoint(CTransaction* ptxIn, unsigned int nIn) { ptx = ptxIn; n = nIn; }
-    void SetNull() { ptx = NULL; n = (unsigned int) -1; }
-    bool IsNull() const { return (ptx == NULL && n == (unsigned int) -1); }
 };
 
 ///  An input of a transaction.  It contains the location of the previous
