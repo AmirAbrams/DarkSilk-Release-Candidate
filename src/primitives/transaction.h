@@ -7,13 +7,24 @@
 #define DARKSILK_PRIMITIVES_TRANSACTION_H
 
 #include <stdio.h>
-
+/*
 #include "amount.h"
 #include "uint256.h"
 #include "serialize.h"
 #include "utilmoneystr.h"
 #include "script/script.h"
 #include "timedata.h"
+*/
+#include "amount.h"
+#include "script/script.h"
+#include "serialize.h"
+#include "uint256.h"
+
+#include "utilmoneystr.h"
+#include "timedata.h"
+
+#include "version.h"
+
 
 class CValidationInterface;
 class CValidationState;
