@@ -481,6 +481,7 @@ SOURCES +=  src/qt/darksilk.cpp src/qt/darksilkgui.cpp src/rest.cpp \
             src/qt/askpassphrasedialog.cpp \
             src/protocol.cpp \
             src/qt/notificator.cpp \
+            src/ui_interface.cpp \
             src/qt/paymentserver.cpp \
             src/qt/debugconsole.cpp \
             src/noui.cpp \
